@@ -1,0 +1,16 @@
+# calculator_messages.yml
+welcome : "欢迎来到我设计的计算器,请输入你的名字:"
+welcome_name : "我们可以开始了!"
+valid_name : "你确认输入了名字吗?我怎么没有收到呢?请重新输入:"
+first_number : "第一个数字是什么?"
+second_number : "第二个数字是什么?"
+valid_number : "啊哈!你输入的好像不是数字呀!别糊弄我了!"
+operator_prompt : 你希望得到什么样的运算结果?
+                       1) 加
+                       2) 减
+                       3) 乘
+                       4) 除
+valid_operator : "只能选择输入数字 1, 2, 3 或 4"
+perform_message : "你想再算一次吗?(如果还有别的计算只要输入'Y'就可以了)"
+last_message : "感谢你能使用我设计的计算器.咱们下次见!"
+result : "计算的结果是 : "

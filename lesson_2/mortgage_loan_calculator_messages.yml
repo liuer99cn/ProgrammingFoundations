@@ -1,0 +1,13 @@
+# mortgage_loan_calculator_messages.yml
+welcome : "Welcome to the loan calculator!What's your name?"
+valid_name : "Please input your name!"
+loan_input : "Please input your amount of loan: "
+valid_number : "Please input a valid number!"
+loan_duration : "How many years with your loan duration?Please input:(number of years)"
+error_message : "The loan must be in 30 years"
+method_message : "Please select your method of loan: 1)Equal Principal
+                            2)Principal Interest Equal"
+select_message : "Please input the number of methods,1 or 2"
+perform_message : "Do you want to perform another calculation?(Y to calculate again)"
+loan_output : "Your loan in month is: $ "
+interest_output : "Your monthly interest rate is: $ "
