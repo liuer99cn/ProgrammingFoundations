@@ -1,6 +1,10 @@
 require 'yaml'
 MESSAGES = YAML.load_file('mortgage_loan_calculator_messages.yml')
 
+def clear_screen
+  system('clear') || system('cls')
+end
+
 def equal_principal(amount, months, rate)
   d = amount.to_i * (rate.to_f * (1 + rate.to_f) ** months.to_i) / ((1 + rate.to_f) ** months.to_i - 1)
   e = (d * months.to_i - amount.to_i) / months.to_i
@@ -113,4 +117,6 @@ loop do
 
   user_input = Kernel.gets().chomp()
   break unless user_input.downcase().start_with?('y')
+
+  clear_screen
 end

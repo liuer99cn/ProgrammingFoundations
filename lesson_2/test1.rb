@@ -9,5 +9,10 @@ def annual_percentage_rate(year)
 end
 
 
-puts annual_percentage_rate(18)
+def test(b)
+  p b.map {|letter| "I like the letter: #{letter}"}
+end
 
+a = ['a', 'b', 'c']
+test(a)
+p a
