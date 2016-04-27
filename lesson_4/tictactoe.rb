@@ -1,4 +1,4 @@
-require 'pry'
+#require 'pry'
 WINNING_LINES = [[1, 2, 3], [4, 5, 6], [7, 8, 9]] +
     [[1, 4, 7], [2, 5, 8], [3, 6, 9]] +
     [[1, 5, 9], [3, 5, 7]]
@@ -6,7 +6,7 @@ INITIAL_MAKER = ' '.freeze
 PLAYER_MAKER = 'X'.freeze
 COMPUTER_MAKER = 'O'.freeze
 
-def joinor(arr, symbol = ',', word = 'or')
+def joinor(arr, symbol = ',', word = 'or')1
   result_str = arr.join(symbol)
   num = result_str.length.to_i - 1
   insert_word = ' ' + word + ' '
@@ -92,27 +92,60 @@ def detect_winner(brd)
 end
 
 
-
-loop do
-  board = initialize_board
+loop do #main loop
+  #board = initialize_board
+  total_score = []
 
   loop do
+    board = initialize_board
+      loop do # game loop
+        display_board(board)
+
+        player_places_piece(board)
+        break if someone_won?(board) || board_full?(board)
+
+        computer_places_piece(board)
+        break if someone_won?(board) || board_full?(board)
+
+      end
+
     display_board(board)
+    p someone_won?(board)
 
-    player_places_piece(board)
-    break if someone_won?(board) || board_full?(board)
+    if someone_won?(board) == "Player"
+      prompt("You win!")
+      total_score << detect_winner(board)
+    elsif someone_won?(board) == "Computer"
+      prompt("You Lose!Computer win!")
+      total_score << detect_winner(board)
+    else
+      prompt("It's a tie!")
+      total_score << "It's a tie!"
 
-    computer_places_piece(board)
-    break if someone_won?(board) || board_full?(board)
+    #if someone_won?(board)
+      #prompt("#{detect_winner(board)} won!")
+      #total_score << detect_winner(board)
+
+    #else
+      #prompt("It's a tie!")
+      #total_score << "It's a tie!"
+    end
+
+    prompt("your score is #{total_score.count("Player")},computer score is #{total_score.count("Computer")}")
+    break if total_score.count("Player") > 1 || total_score.count("Computer") > 1
+
+    p total_score
   end
 
-  display_board(board)
 
-  if someone_won?(board)
-    prompt "#{detect_winner(board)} won!"
-  else
-    prompt "It's a tie!"
-  end
+
+
+    #break if total_score.count("Player") > 1
+
+  #break if total_score.count("Player") > 2
+
+
+    #break if total_score.count("Player") > 4 || total_score.count("Computer") > 4
 
   prompt "Do you want play again?('Y' for again)"
   choice = gets.chomp
