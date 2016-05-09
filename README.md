@@ -1,4 +1,4 @@
-Local Variables
+##Local Variables
 
 1.In Ruby, variable scope is defined by a block.Inner scope can access variables initialized in an outer scope, but not vice versa.So the value of `str` is 2. This is because `str` is available to the inner scope created by `loop do ... end`, which allowed the code to re-assign the value of `str`. 
 
@@ -18,8 +18,8 @@ And they have different scope, they don't share the same scope.
 The line of code `a << " world"` did not result in reassigning a to a new string. Rather, it mutated the caller and modified the existing string, and now `a = "hi world"`, the variable b does not change.
 
 7.I find the methods called `defined?`,and running in `irb`,the variables of `a,b,c,d` are local variables，and there are four objects(string).
-
-Mutating Method Arguments
+------------------------------------------------------------------------
+##Mutating Method Arguments
 
 1.The line of code `param + " world"` will be to a new string, so variable `param` in the method `change` does not change.
 So the values of local variable `greeting` does not change after running line 6.
@@ -34,8 +34,8 @@ The second line of method `param << "hey"` did not result in reassigning param t
 The third line `param = "hi"` reassigned the variable param to a completely different address in memory; it's now pointing to an entirely new string,so param is "hi" now.
 The last line of method `param << " world"` did not result in reassigning param to a new string. Rather, it mutated the caller and modified the existing string, so it will be "hi world".
 Method change will return "hi world", and the variable greeting is always be "hello".
-
-Working with Collections
+------------------------------------------------------------------------
+##Working with Collections
 
 1.The `map` method takes an enumerable object and a block, and runs the block for each element, outputting each returned value from the block (the original object is unchanged): `[1, 2, 3].map { |n| n * n } #=> [1, 4, 9]` `map` with a block returns an Array.
 `map` creates a new array consisting of the returned value of the block, let's see an example with map and puts:
@@ -70,8 +70,3 @@ and the condition of block is `n+2` is always will return true, so `arr`will be 
 
 7.the code of the question will output `1 2 3 []`,and `arr` will be `[]`, the line of `puts n` will return `nil`,and that's means `false` in ruby,the select method will return the actual values being iterated over if the block evaluates to true.
 So everytime return `nil` means `false`, and every elements in `arr` don't meet the condition of it, at last `arr` is `[]`. 
-
-
-
-
-
