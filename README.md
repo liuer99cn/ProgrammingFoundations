@@ -29,10 +29,11 @@ So the values of local variable `greeting` does not change after running line 6.
 3.The line of code `param = "hi"` reassigned the variable param to a completely different address in memory,the line of code `param << " world"` did not result in reassigning param to a new string.
 So the method of change  will always return "hello world",and the variable greeting is "hello".
 
-4.-The variable greeting is "hello",the first line of method `param += "greeting"` will be "hellogreeting",that the code `param += "greeting"` reassigned the variable param to a completely different address in memory; it's now pointing to an entirely new string,so the variable greeting does not change. 
--The second line of method `param << "hey"` did not result in reassigning param to a new string. Rather, it mutated the caller and modified the existing string, it will be "hellogreetinghey".
--The third line `param = "hi"` reassigned the variable param to a completely different address in memory; it's now pointing to an entirely new string,so param is "hi" now.
--The last line of method `param << " world"` did not result in reassigning param to a new string. Rather, it mutated the caller and modified the existing string, so it will be "hi world".
+4.The answer:
+*The variable greeting is "hello",the first line of method `param += "greeting"` will be "hellogreeting",that the code `param += "greeting"` reassigned the variable param to a completely different address in memory; it's now pointing to an entirely new string,so the variable greeting does not change. 
+*The second line of method `param << "hey"` did not result in reassigning param to a new string. Rather, it mutated the caller and modified the existing string, it will be "hellogreetinghey".
+*The third line `param = "hi"` reassigned the variable param to a completely different address in memory; it's now pointing to an entirely new string,so param is "hi" now.
+*The last line of method `param << " world"` did not result in reassigning param to a new string. Rather, it mutated the caller and modified the existing string, so it will be "hi world".
 Method change will return "hi world", and the variable greeting is always be "hello".
 
 ##Working with Collections
