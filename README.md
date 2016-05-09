@@ -18,7 +18,7 @@ And they have different scope, they don't share the same scope.
 The line of code `a << " world"` did not result in reassigning a to a new string. Rather, it mutated the caller and modified the existing string, and now `a = "hi world"`, the variable b does not change.
 
 7.I find the methods called `defined?`,and running in `irb`,the variables of `a,b,c,d` are local variables，and there are four objects(string).
-------------------------------------------------------------------------
+
 ##Mutating Method Arguments
 
 1.The line of code `param + " world"` will be to a new string, so variable `param` in the method `change` does not change.
@@ -34,38 +34,46 @@ The second line of method `param << "hey"` did not result in reassigning param t
 The third line `param = "hi"` reassigned the variable param to a completely different address in memory; it's now pointing to an entirely new string,so param is "hi" now.
 The last line of method `param << " world"` did not result in reassigning param to a new string. Rather, it mutated the caller and modified the existing string, so it will be "hi world".
 Method change will return "hi world", and the variable greeting is always be "hello".
-------------------------------------------------------------------------
+
 ##Working with Collections
 
 1.The `map` method takes an enumerable object and a block, and runs the block for each element, outputting each returned value from the block (the original object is unchanged): `[1, 2, 3].map { |n| n * n } #=> [1, 4, 9]` `map` with a block returns an Array.
 `map` creates a new array consisting of the returned value of the block, let's see an example with map and puts:
-```a = [1, 2, 3]
+```
+a = [1, 2, 3]
 a.map { |x| puts x**2 }
-=> [nil, nil, nil]```
+=> [nil, nil, nil]
+```
 Because puts returns nil every time the block is invoked nil is returned which makes up the values in the newly created returned array.
 
 2.When all you're doing is pulling out, or selecting, certain items based on some criteria, you'd be better served using Enumerable's `select` instead. It will run the block on every item of your object (whether array or hash or whatever) and return a new object that contains only those items for which the original block returned true:
-``` array = [1,2,3,4,5,6,7,8,100]
+```
+array = [1,2,3,4,5,6,7,8,100]
 array.select{|item| item%2==0 }
-=> [2,4,6,8,100] ```
+=> [2,4,6,8,100] 
+```
 
 3.the `n` in `[1, 2, 3].map {|n| n + 1}` will not change.
 `map` creates a new array consisting of the returned value of the block,so `n+= 1` is not safe if you don't know what's will be return.
 I prefer the first`[1, 2, 3].map {|n| n + 1}`.
 
 4.Because the `map` methods will return an array of values returned by the block.The code of 
-```arr = [1, 2, 3].map do |n|
+```
+arr = [1, 2, 3].map do |n|
     n > 2
-   end```
+end
+```
 means every elements in `arr` greater than 2 is true or false.So the return values is `[false, false, true]`
 
 5.The `puts` methods will return `nil` everytime after be called.The `map` methods will return an array of values returned by the block.So `arr` will be `[nil, nil, nil]`.
 
 6.The select method will return the actual values being iterated over if the block evaluates to true. and in the code of:
-```arr = [1, 2, 3].select do |n|
+```
+arr = [1, 2, 3].select do |n|
     n + 2
   end
-  p arr```
+p arr
+```
 and the condition of block is `n+2` is always will return true, so `arr`will be `[1, 2, 3]` .
 
 7.the code of the question will output `1 2 3 []`,and `arr` will be `[]`, the line of `puts n` will return `nil`,and that's means `false` in ruby,the select method will return the actual values being iterated over if the block evaluates to true.
