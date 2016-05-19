@@ -1,0 +1,33 @@
+def status_of_number(input_num, random_num)
+  unless input_num != random_num
+    'You win!'
+  else
+    (input_num > random_num) ? 'Your guess number is too big':'Your number is too small'
+  end
+end
+
+def promp(msg)
+  puts "#{msg}"
+  puts "----------------------------------------"
+end
+
+answer_times = 0
+number_random = (1..100).to_a.sample.to_i
+#p number_random
+
+loop do
+  answer = 0
+  loop do
+    promp "Please input a guess number:(1 to 100)"
+    answer = gets.chomp.to_i
+    promp "Invalid input(1 to 100),please try again!"
+    break if answer != 0 && answer < 100
+  end
+
+  promp status_of_number(answer, number_random)
+  answer_times += 1
+  promp "Round #{answer_times} you already guess!"
+  promp "You're wrong! Let's try again!"
+
+  break if answer == number_random
+end
