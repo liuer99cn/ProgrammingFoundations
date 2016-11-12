@@ -1,7 +1,6 @@
 #About
 This is a exercises of [Web Development Course](www.lanuchschool).
-In this course, we'll increase the level of complexity from the Programming Prep course and work on more meaningful exercises. We'll use a static code analyzer and learn to systematically approach a problem using pseudo-code. As we go through these programs, we'll point out important learning concepts like variable scope, method scope, and using blocks. After this course, you should have a good grasp of how to write programs and think in an imperative, step-by-step, logical fashion. You will also learn to debug and trap tricky bugs, and learn to develop a temperament for debugging.
-
+In this course, we'll increase the level of complexity from the Programming Prep course and work on more meaningful exercises. We'll use a static code analyzer and learn to systematically approach a problem using pseudo-code. As we go through these programs, we'll point out important learning concepts like variable scope, method scope, and using blocks. 
 #Major Topics
 * Ruby language and syntax
 * When to use certain data structures
