@@ -51,7 +51,7 @@ def player_places_piece!(brd)
     if empty_squares(brd).include?(square)
       break
     else
-      prompt("Sorry, it's not a valid choice!")
+      prompt("Sorry, it's a valid choice!")
     end
   end
   brd[square] = PLAYER_MARKER
