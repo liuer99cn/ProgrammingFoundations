@@ -7,7 +7,7 @@ loop do
   break if i > 9
 end
 
-10.times {|number| puts (" " * number) + "The Flintstones Rock!"}
+10.times {|number| puts (" " * number) + "The Flintstones is Rock!"}
 
 statement = "The Flintstones Rock"
 result1 = {}
