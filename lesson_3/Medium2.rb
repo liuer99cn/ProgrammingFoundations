@@ -53,6 +53,10 @@ def mess_with_it(some_number)
   some_number += 8
 end
 
+def made_of_good(some_number)
+    some_number -= 20
+end
+
 p mess_with_it(answer)
 p answer
 new_answer = mess_with_it(answer)
