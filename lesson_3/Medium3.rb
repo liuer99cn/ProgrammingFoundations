@@ -69,7 +69,7 @@ end
 
 def tricky_method_two(a_string_param, an_array_param)
   a_string_param.gsub!('pumpkins', 'rutabaga')
-  an_array_param  = ['pumpkins', 'rutabaga']
+  an_array_param  = ['pumpkins', 'rutabagagh']
 end
 
 my_string = "pumpkins"
