@@ -76,7 +76,7 @@ my_string = "pumpkins"
 my_array = ["pumpkins"]
 p tricky_method_two(my_string, my_array)
 
-puts "My string looks like this now: #{my_string}"
+puts "My string looks like this now is: #{my_string}"
 puts "My array looks like this now: #{my_array}"
 
 def color_valid(color)
