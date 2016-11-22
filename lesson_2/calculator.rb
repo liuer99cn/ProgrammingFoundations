@@ -124,6 +124,8 @@ loop do
                number1.to_f() * number2.to_f()
              when '4'
                number1.to_f() / number2.to_f()
+             when '5'
+               number2.to_f()
            end
 
   prompt(MESSAGES['result'] + "#{result}")
