@@ -19,6 +19,7 @@ def uuid
   arr3 = []
   arr4 = []
   arr5 = []
+  arr6 = []
   num = 0
   sample_arr = ('a'..'f').to_a + (0..9).to_a
   loop do
